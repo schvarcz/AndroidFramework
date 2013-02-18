@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.framework.annotations;
 
 import java.lang.annotation.ElementType;
@@ -10,21 +14,8 @@ import java.lang.annotation.Target;
  * @author schvarcz
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-public @interface DBField
+@Target(ElementType.TYPE)
+public @interface CDBTable
 {
-
-    String fieldName() default "";
-
-    DBTypes types() default DBTypes.Null;
-
-    boolean notnull() default false;
-
-    public enum DBTypes
-    {
-        Null,
-        Int,
-        Text,
-        Float
-    }
+    String TableName();
 }

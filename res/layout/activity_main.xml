@@ -1,14 +1,41 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="wrap_content" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/ETNome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        tools:context=".MainActivity" />
+    <Button
+        android:id="@+id/BTNovo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        tools:context=".MainActivity" />
+    <Button
+        android:id="@+id/BTSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Busca"
+        tools:context=".MainActivity" />
+    <Button
+        android:id="@+id/BTSearchAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BuscaTodos"
+        tools:context=".MainActivity" />
+    <TextView
+        android:id="@+id/TVNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/hello_world"
         tools:context=".MainActivity" />
 
-</RelativeLayout>
+</LinearLayout>
+</ScrollView>

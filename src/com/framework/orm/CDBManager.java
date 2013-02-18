@@ -13,20 +13,20 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
-import com.framework.App;
-import com.framework.orm.DBCore.OpenHelper;
+import com.framework.CApp;
+import com.framework.orm.CDBCore.OpenHelper;
 
 /**
  * Auxilia no gerenciamento de uma conexão com um banco de dados SQLite.
  * 
  * @author enovative
  */
-public class DBManager {
+public class CDBManager {
 	private static SQLiteDatabase mDB = null;
 	private static OpenHelper mOpenHelper = null;
 
 	public static SQLiteDatabase db() {
-		open(App.getInstance());
+		open(CApp.getInstance());
 		return mDB;
 	}
 
@@ -47,7 +47,7 @@ public class DBManager {
 
 	public static OpenHelper openHelper() {
 		if (mOpenHelper == null) {
-			mOpenHelper = new OpenHelper(App.getInstance());
+			mOpenHelper = new OpenHelper(CApp.getInstance());
 		}
 		return mOpenHelper;
 	}

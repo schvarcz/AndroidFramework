@@ -1,15 +1,15 @@
 package com.example.model;
 
-import com.framework.annotations.DBTable;
-import com.framework.orm.DBBaseModel;
+import com.framework.annotations.CDBTable;
+import com.framework.orm.CDBBaseModel;
 
 
 /**
  *
  * @author schvarcz
  */
-@DBTable(TableName = "Tipo")
-public class TipoTabela extends DBBaseModel<TipoTabela>
+@CDBTable(TableName = "Tipo")
+public class TipoTabela extends CDBBaseModel<TipoTabela>
 {
     
 }

@@ -11,13 +11,12 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface DBRelation
+public @interface CDBRelation
 {
 
     DBRelations relation() default DBRelations.BELONGS_TO;
-    //Class <?> table();
-    //Class <?> pivotTable() default null;
-
+    String field() default ""; 
+    
     public enum DBRelations
     {
         //MANY_MANY,

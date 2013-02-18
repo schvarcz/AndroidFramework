@@ -14,21 +14,20 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class DBCore {
+public class CDBCore {
 	public static class OpenHelper extends SQLiteOpenHelper {
 		public static final String DATABASE_NAME = "eneonits.db";
 		private static final int DATABASE_VERSION = 1;
-		private static Context mContext;
 
 		public OpenHelper(Context context) {
 			super(context, DATABASE_NAME, null, DATABASE_VERSION);
-			mContext = context;
 			Log.i("Banco", "construct");
 		}
 
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			Log.i("Banco", "create");
+		    db.execSQL("CREATE TABLE Exemplo (id_exemplo INTEGER PRIMARY KEY, nome_qualquer TEXT, id_tipo_tabela INTEGER)");
 			// TODO: Pegar SQL do App.
 		}
 
@@ -110,7 +109,7 @@ public class DBCore {
 		/**
 		 * Busca os comandos SQL para a criação do banco de dados em um servidor
 		 * remoto.
-		 * 
+		 * ON = 1;ON = 1;ON = 1;
 		 * @param reader
 		 *            BufferedReader que deverá ser separado.
 		 * @return Vetor de strings, cada uma contendo um comando SQL.
